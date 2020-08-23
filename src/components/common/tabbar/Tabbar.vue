@@ -1,23 +1,23 @@
 <template>
   <div id="bar">
     <Tabbaritem link = "/home" >
-      <img slot = "item-icon" src="../../../assets/img/homefill1.png" alt="首页">
-      <img slot = "item-active" src="../../../assets/img/homefill.png" alt="">
+      <img slot = "item-icon" src="~assets/img/homefill1.png" alt="首页">
+      <img slot = "item-active" src="~assets/img/homefill.png" alt="">
       <p slot = "item-text">首页</p>
     </Tabbaritem>
     <Tabbaritem link = "/category" >
-      <img slot = "item-icon" src="../../../assets/img/chuanghu1.png" alt="分类">
-      <img slot = "item-active" src="../../../assets/img/chuanghu.png" alt="">
+      <img slot = "item-icon" src="~assets/img/chuanghu1.png" alt="分类">
+      <img slot = "item-active" src="~assets/img/chuanghu.png" alt="">
       <p slot = "item-text">分类</p>
     </Tabbaritem>
     <Tabbaritem link = "/cart" >
-      <img slot = "item-icon" src="../../../assets/img/gouwuchekong1.png" alt="购物车">
-      <img slot = "item-active" src="../../../assets/img/gouwuchekong.png" alt="">
+      <img slot = "item-icon" src="~assets/img/gouwuchekong1.png" alt="购物车">
+      <img slot = "item-active" src="~assets/img/gouwuchekong.png" alt="">
       <p slot = "item-text">购物车</p>
     </Tabbaritem>
     <Tabbaritem link = "/profile" >
-      <img slot = "item-icon" src="../../../assets/img/yuan1.png" alt="我的">
-      <img slot = "item-active" src="../../../assets/img/yuan.png" alt="">
+      <img slot = "item-icon" src="~assets/img/yuan1.png" alt="我的">
+      <img slot = "item-active" src="~assets/img/yuan.png" alt="">
       <p slot = "item-text">我的</p>
     </Tabbaritem>
     
