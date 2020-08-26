@@ -1,7 +1,7 @@
 <template>
   <div id="my-swiper">
 
-    <div class="swiper" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
+    <div class="swiper" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd" @mouseenter="pause" @mouseleave="resume">
       <slot></slot>
     </div>
     
@@ -69,6 +69,14 @@ export default {
       stopTimer: function () {
         window.clearInterval(this.playTimer);
       },
+      // 鼠标进入的时候
+      pause(){
+        this.stopTimer()
+      },
+      // 鼠标出去的时候
+      resume(){
+        this.startTimer()
+      },
       /**
        * 滚动到正确的位置
        */
@@ -130,11 +138,8 @@ export default {
        * 拖动事件的处理
        */
       touchStart: function (e) {
-        // 1.如果正在滚动, 不可以拖动
         if (this.scrolling) return;
-        // 2.停止定时器
         this.stopTimer();
-        // 3.保存开始滚动的位置
         this.startX = e.touches[0].pageX;
       },
       touchMove: function (e) {
@@ -172,12 +177,9 @@ export default {
         this.changeItem(1);
       },
       changeItem: function (num) {
-        // 1.移除定时器
         this.stopTimer();
-        // 2.修改index和位置
         this.currentIndex += num;
         this.scrollContent(-this.currentIndex * this.totalWidth);
-        // 3.添加定时器
         this.startTimer();
       }
     }

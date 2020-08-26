@@ -5,20 +5,23 @@
         <p>购物街</p>
       </div>
     </nav-bar>
-    <home-swiper :banners = banners ></home-swiper>
+    <home-swiper :banners = "banners" />
+    <recommends-view :recommends = "recommends" /> 
   </div>
 </template>
 <script>
 import NavBar from 'components/common/navBar/NavBar.vue';
 import {getHomeMultidata} from 'network/home.js';
-import homeSwiper from './childComps/HomeSwiper.vue'
+import homeSwiper from './childComps/HomeSwiper.vue';
+import RecommendsView from './childComps/RecommendView';
 
 
 export default {
   name: 'Home',
   components: {
     NavBar,
-    homeSwiper
+    homeSwiper,
+    RecommendsView
   },
   data(){
     return {
@@ -28,9 +31,9 @@ export default {
   },
   created() { 
     getHomeMultidata().then(res => {
-      console.log(res)
       this.banners = res.data.banner.list
       this.recommends = res.data.recommend.list
+      console.log(this.recommends)
     })
   },
   
