@@ -38,14 +38,17 @@ export default {
 <style scoped>
 
 #bar {
-  background-color: #f6f6f6;
+  
   position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
+
   box-shadow: 0px -2px 1px rgba(100, 100, 100, 0.1);
+  border-top: 0 -1px 1px rgba(150 , 150 , 150 , .1);
+
   display: flex;
-  width: 100%;
-  z-index: 9999;
+  height: 49px;
+  /* background-color: #f5f5f5; */
 }
 </style>

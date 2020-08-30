@@ -1,6 +1,6 @@
 <template>
-  <div class="goods-item">
-    <img :src="goodsItem.show.img" alt="图片" @load="imageLoad"/>
+  <div class="goods-item" @click="itemClick">
+    <img :src="showImage" alt="图片" @load="imageLoad"/>
     <div class="info">
       <p class="title">{{goodsItem.title}}</p>
       <span class="price">{{goodsItem.price}}</span>
@@ -20,9 +20,18 @@ export default {
       },
     },
   },
+  computed:{
+    showImage(){
+      return this.goodsItem.image || this.goodsItem.show.img
+    }
+  },
   methods:{
     imageLoad(){
       this.$bus.$emit('itemImageLoad')
+    },
+    // 跳转到详情页
+    itemClick(){
+      this.$router.push('/detail/' + this.goodsItem.iid)
     }
   }
 };

@@ -76,6 +76,9 @@ export default {
     scrollTo(x, y, time = 100) {
       this.scroll && this.scroll.scrollTo && this.scroll.scrollTo(x, y, time);
     },
+    getScrolly(){
+      return this.scroll ? this.scroll.y : 0
+    }
   },
   watch: {
     data() {

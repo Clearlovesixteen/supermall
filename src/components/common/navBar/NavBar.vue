@@ -17,7 +17,6 @@ export default {
     display: flex;
     line-height: 44px;
     text-align: center;
-    color: #fff;
     box-shadow: 0 1px 1px rgba(100, 100, 100, .1);
   }
 
