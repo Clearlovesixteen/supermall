@@ -20,6 +20,7 @@ export default {
 .check-button {
   background-color: #ccc;
   border-radius: 50%;
+  margin-right: 10px;
 }
 .check {
   background-color: red;
